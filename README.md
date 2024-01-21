@@ -1,8 +1,8 @@
 <div align="center"><img src="./src/assets/Ethereum-Logo-PNG-HD-Image.png" width="150px"></div>
-<h1 align="center">E-Commerce dApp</h1>
+<h1 align="center">E-Commerce DApp</h1>
 <p align="center">This project is about the creation of an ecommerce dApp, created by samuelefrni.
 <br>
-Click here to <a href="https://ecommerce-d-app-git-main-samuele-furnaris-projects.vercel.app/"><strong>Live Demo</strong></a>
+Click here to <a href="https://ecommerce-dapp-pink.vercel.app/"><strong>Live Demo</strong></a>
 </p>
 
 # React + TypeScript + Vite
