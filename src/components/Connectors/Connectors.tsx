@@ -38,7 +38,7 @@ const Connectors = (): JSX.Element => {
         <div className={ConnectorsCSS.containerAccountInfo}>
           {status == "pending" ? (
             <div>
-              <em>Waiting</em>
+              <em>Waiting...</em>
             </div>
           ) : (
             <div className={ConnectorsCSS.accountInfo}>

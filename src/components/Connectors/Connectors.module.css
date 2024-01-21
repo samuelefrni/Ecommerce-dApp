@@ -12,6 +12,7 @@ option {
   background-color: #5f4b8b;
   color: white;
   padding: 10px 20px;
+  font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
@@ -39,7 +40,7 @@ option {
 
   .containerWallet select,
   option {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .containerAccountInfo a {
