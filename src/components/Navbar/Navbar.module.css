@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.containerNav {
+  height: 150px;
+  width: 100%;
+}
+
+.containerNav nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+nav img {
+  height: 100px;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 999px) {
+  nav img {
+    height: 120px;
+  }
+}

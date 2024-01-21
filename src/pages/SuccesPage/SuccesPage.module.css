@@ -1,0 +1,63 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.showPageContainer {
+  margin: 30px;
+  padding: 20px;
+  min-height: 400px;
+  color: white;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.abstractIMG {
+  position: absolute;
+  z-index: -1;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(25%) blur(50px);
+}
+
+.showPageContainer h2 {
+  font-size: 22px;
+  padding: 10px;
+}
+
+.containerIMG {
+  position: relative;
+  margin: 20px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.containerIMG img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
+
+.showPageContainer button {
+  font-size: 18px;
+  margin: 20px;
+}
+
+@media only screen and (min-width: 999px) {
+  .showPageContainer h2 {
+    font-size: 38px;
+  }
+
+  .containerIMG {
+    height: 300px;
+    width: 500px;
+  }
+}

@@ -1,0 +1,52 @@
+.containerAccountInfo {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.containerAccountInfo em {
+  font-size: 22px;
+}
+
+.containerWallet select,
+option {
+  background-color: #5f4b8b;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.containerAccountInfo a {
+  --tw-bg-opacity: 1;
+  color: rgb(150 150 150 / var(--tw-bg-opacity));
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.containerAccountInfo a:hover {
+  color: black;
+}
+
+.containerAccountInfo button {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 999px) {
+  .containerAccountInfo em {
+    font-size: 26px;
+  }
+
+  .containerWallet select,
+  option {
+    font-size: 18px;
+  }
+
+  .containerAccountInfo a {
+    font-size: 20px;
+  }
+
+  .containerAccountInfo button {
+    font-size: 18px;
+  }
+}

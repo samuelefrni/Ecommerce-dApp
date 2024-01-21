@@ -1,0 +1,95 @@
+.containerDisconnected {
+  text-align: center;
+}
+
+.containerAllProducts {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerCourse {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 20px;
+  margin: 20px;
+  overflow: hidden;
+  min-width: 330px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.abstractIMG {
+  position: absolute;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(25%) blur(50px);
+}
+
+.containerCourse h2 {
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+  font-size: 28px;
+}
+
+.containerCourse p {
+  z-index: 1;
+}
+
+.containerCourse a {
+  z-index: 1;
+}
+
+.containerCourse button {
+  z-index: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.containerIMG {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.containerIMG img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 999px) {
+  .containerAllProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .containerCourse h2 {
+    font-size: 32px;
+  }
+
+  .containerCourse p {
+    font-size: 20px;
+  }
+
+  .containerCourse button {
+    font-size: 18px;
+  }
+
+  .containerIMG {
+    width: 300px;
+    height: 300px;
+  }
+}

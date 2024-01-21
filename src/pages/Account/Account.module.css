@@ -1,0 +1,50 @@
+.accountInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.accountInfo ul {
+  padding: 20px;
+}
+
+.accountInfo h2 {
+  padding: 20px;
+  font-size: 24px;
+}
+
+.containerPurchase {
+  display: flex;
+}
+
+@media only screen and (min-width: 999px) {
+  .accountContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .accountInfo {
+    width: 80%;
+  }
+
+  .accountInfo ul {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .accountInfo h2 {
+    font-size: 34px;
+  }
+
+  .containerPurchase p {
+    font-size: 18px;
+  }
+}
