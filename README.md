@@ -1,12 +1,4 @@
 <div align="center"><img src="./src/assets/Ethereum-Logo-PNG-HD-Image.png" width="150px"></div>
-<h1 align="center">E-Commerce DApp</h1>
-<p align="center">This project is about the creation of an ecommerce dApp, created by samuelefrni.
-<br>
-Click here to <a href="https://ecommerce-dapp-pink.vercel.app/"><strong>Live Demo</strong></a>
-</p>
-
-
-<div align="center"><img src="./src/assets/Ethereum-Logo-PNG-HD-Image.png" width="150px"></div>
 <br />
 <div align="center">
   <h1 align="center">E-Commerce DApp</h1>
