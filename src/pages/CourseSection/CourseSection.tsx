@@ -1,5 +1,5 @@
 import React from "react";
-import { courses } from "../../components/Products/data";
+import { courses } from "../../utils/data";
 import { useParams } from "react-router-dom";
 import GenericCourse from "../../components/GenericCourse/GenericCourse";
 

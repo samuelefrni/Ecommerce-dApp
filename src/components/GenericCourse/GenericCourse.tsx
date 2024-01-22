@@ -6,7 +6,7 @@ import GenericCourseCSS from "./GenericCourse.module.css";
 import { useAccount } from "wagmi";
 import { addressGianni } from "../../utils/utils";
 import { useSendTransaction } from "wagmi";
-import { purchase } from "../Products/data";
+import { purchase } from "../../utils/data";
 import { parseEther } from "viem";
 import { CiWallet } from "react-icons/ci";
 import { Helmet } from "react-helmet";
@@ -73,7 +73,7 @@ const GenericCourse: React.FC<CourseI> = ({
             />
             <h1>{title}</h1>
             <div className={GenericCourseCSS.courseContainerIMG}>
-              <img src={image} alt={title} />
+              <img src={`/src/assets/${image}`} alt={title} />
             </div>
             {account.status === "disconnected" ? (
               <div className={GenericCourseCSS.containerConnectWallet}>

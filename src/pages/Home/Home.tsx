@@ -1,7 +1,7 @@
 import React from "react";
 import HomeCSS from "./Home.module.css";
 import Image from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
-import { courses } from "../../components/Products/data";
+import { courses } from "../../utils/data";
 
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -15,11 +15,11 @@ const Home = (): JSX.Element => {
       </Helmet>
       <div className={HomeCSS.containerAllProducts}>
         {courses.map((course) => (
-          <div className={HomeCSS.containerCourse}>
+          <div key={course.name} className={HomeCSS.containerCourse}>
             <img className={HomeCSS.abstractIMG} src={Image} alt="" />
             <h2>{course.name}</h2>
             <div className={HomeCSS.containerIMG}>
-              <img src={course.image} alt={course.name} />
+              <img src={`/src/assets/${course.image}`} alt={course.name} />
             </div>
             <p>
               <strong>Price: {course.value} ETH</strong>

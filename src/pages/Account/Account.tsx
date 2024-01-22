@@ -2,7 +2,7 @@ import React from "react";
 import AccountCSS from "./Account.module.css";
 
 import { useAccount, useBalance } from "wagmi";
-import { purchase } from "../../components/Products/data";
+import { purchase } from "../../utils/data";
 import { formatEther } from "viem";
 import { Helmet } from "react-helmet";
 

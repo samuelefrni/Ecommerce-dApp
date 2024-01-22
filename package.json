@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@helia/json": "^2.0.1",
     "@tanstack/react-query": "^5.17.12",
+    "helia": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

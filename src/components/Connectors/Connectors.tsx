@@ -23,10 +23,8 @@ const Connectors = (): JSX.Element => {
     <React.StrictMode>
       {account.status == "disconnected" ? (
         <div className={ConnectorsCSS.containerWallet}>
-          <select onChange={handleWalletChange}>
-            <option disabled selected>
-              Select Wallet
-            </option>
+          <select defaultValue={"Select Wallet"} onChange={handleWalletChange}>
+            <option>Select Wallet</option>
             {connectors.map((connector) => (
               <option key={connector.uid} value={connector.uid}>
                 {connector.name}

@@ -18,3 +18,11 @@ export interface SuccesPageI {
   image: string;
   setPurchaseSuccess: Dispatch<SetStateAction<boolean>>;
 }
+
+export interface ObjI {
+  description: string;
+  id: string;
+  image: string;
+  name: string;
+  value: string;
+}
