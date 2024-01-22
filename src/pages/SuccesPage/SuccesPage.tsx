@@ -17,7 +17,7 @@ const SuccesPage: React.FC<SuccesPageI> = ({
             You have purchased <br /> {title}
           </h2>
           <div className={SuccesPageCSS.containerIMG}>
-            <img src={`/src/assets/${image}`} alt={title} />
+            <img src={`/assets/${image}`} alt={title} />
           </div>
           <Link to={"/account"}>
             <button onClick={() => setPurchaseSuccess(false)}>

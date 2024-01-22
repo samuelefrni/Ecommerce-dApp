@@ -19,7 +19,7 @@ const Home = (): JSX.Element => {
             <img className={HomeCSS.abstractIMG} src={Image} alt="" />
             <h2>{course.name}</h2>
             <div className={HomeCSS.containerIMG}>
-              <img src={`/src/assets/${course.image}`} alt={course.name} />
+              <img src={`/assets/${course.image}`} alt={course.name} />
             </div>
             <p>
               <strong>Price: {course.value} ETH</strong>

@@ -73,7 +73,7 @@ const GenericCourse: React.FC<CourseI> = ({
             />
             <h1>{title}</h1>
             <div className={GenericCourseCSS.courseContainerIMG}>
-              <img src={`/src/assets/${image}`} alt={title} />
+              <img src={`/assets/${image}`} alt={title} />
             </div>
             {account.status === "disconnected" ? (
               <div className={GenericCourseCSS.containerConnectWallet}>
