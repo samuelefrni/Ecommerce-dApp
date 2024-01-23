@@ -63,6 +63,14 @@ To fully experience the features of the dApp and participate in token transactio
 
 I chose React and TypeScript for the frontend development to leverage the component-based architecture, which facilitates modular development and code reusability. TypeScript adds static typing, enhancing code quality and providing better developer tooling.
 
+### React Helmet
+
+React Helmet is very important to dynamically update page titles based on the content being viewed, this not only enhances the user experience but also contributes to SEO. I also use React Helmet to set meta descriptions for different pages, meta descriptions are crucial for SEO, and dynamically updating them based on the page content can improve search engine rankings.
+
+### React Router Dom
+
+React Router Dom is an important choice for React applications that require advanced navigation and routing management. It facilitates the development of responsive and well-structured SPA applications, giving the developer powerful and intuitive tools for creating high-quality user experiences.
+
 ### Ethereum Transactions with Wagmi
 
 For interacting with the Ethereum blockchain and handling transactions, I opted for Wagmi. Wagmi simplifies the process of sending and receiving ERC-20 tokens, ensuring a secure and reliable integration with the Ethereum network. It provides a user-friendly API for interacting with smart contracts, making it an excellent choice for decentralized applications.
