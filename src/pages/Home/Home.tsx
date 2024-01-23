@@ -1,6 +1,6 @@
 import React from "react";
 import HomeCSS from "./Home.module.css";
-import Image from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
+import Image from "../../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import { courses } from "../../utils/data";
 
 import { Link } from "react-router-dom";

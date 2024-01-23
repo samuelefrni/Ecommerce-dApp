@@ -1,7 +1,7 @@
 import React from "react";
 import { SuccesPageI } from "../../utils/interface";
 import { Link } from "react-router-dom";
-import AbstractIMAGE from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
+import AbstractIMAGE from "../../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import SuccesPageCSS from "./SuccesPage.module.css";
 
 const SuccesPage: React.FC<SuccesPageI> = ({
