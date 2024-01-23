@@ -2,42 +2,42 @@
   {
     "description": "Creating works of art using tactile materials such as sand, fabric, crepe paper and other materials with different textures also exploring painting with fingers, sponges or brushes",
     "id": "1936",
-    "image": "OL_020p_en_2500x1500_L1240145_be-2048x1229.jpg",
+    "image": "/src/assets/OL_020p_en_2500x1500_L1240145_be-2048x1229.jpg",
     "name": "Tactile Painting",
     "value": "0.0045"
   },
   {
     "description": "Exploration of creativity through music and body movement, use of adapted musical instruments or experimentation with creating sounds with everyday objects.",
     "id": "1354",
-    "image": "Blog-Main-Image-5-min.png",
+    "image": "/src/assets/Blog-Main-Image-5-min.png",
     "name": "Music Movement",
     "value": "0.0025"
   },
   {
     "description": "Acting workshops that highlight diversity and celebrate the skills of each participant, creating and acting out original stories that reflect students' individual experiences.",
     "id": "1846",
-    "image": "ilhom2 (1).jpg.webp",
+    "image": "/src/assets/ilhom2 (1).jpg.webp",
     "name": "Inclusive Theatre",
     "value": "0.0048"
   },
   {
     "description": "Creating photography projects that capture the world from students' unique perspectives, exploring photography through the use of accessible cameras or smartphones.",
     "id": "1754",
-    "image": "Champaner-Heritage-Resort-Ideal-For-Pre-wedding-Shoots.jpg",
+    "image": "/src/assets/Champaner-Heritage-Resort-Ideal-For-Pre-wedding-Shoots.jpg",
     "name": "Inclusive Photography",
     "value": "0.0042"
   },
   {
     "description": "Using artistic techniques as a therapeutic tool to address emotional or physical challenges, creating projects that encourage personal expression and reflection.",
     "id": "1246",
-    "image": "142019441-56a792635f9b58b7d0ebcaa2.webp",
+    "image": "/src/assets/142019441-56a792635f9b58b7d0ebcaa2.webp",
     "name": "Therapeutic Arts",
     "value": "0.0028"
   },
   {
     "description": "Using clay or modeling clay to create three-dimensional sculptures, experimentation with adapted tools and techniques that facilitate modeling.",
     "id": "1584",
-    "image": "100A0228-scaled.jpg",
+    "image": "/src/assets/100A0228-scaled.jpg",
     "name": "Accessible Sculpture",
     "value": "0.0048"
   }
