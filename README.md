@@ -71,6 +71,10 @@ React Helmet is very important to dynamically update page titles based on the co
 
 React Router Dom is an important choice for React applications that require advanced navigation and routing management. It facilitates the development of responsive and well-structured SPA applications, giving the developer powerful and intuitive tools for creating high-quality user experiences.
 
+### React Icons
+
+I chose to use React Icons because is designed to be easily integrated with React projects without requiring complex configurations. I easily embed icons into my project without having to manually manage asset loading.
+
 ### Ethereum Transactions with Wagmi
 
 For interacting with the Ethereum blockchain and handling transactions, I opted for Wagmi. Wagmi simplifies the process of sending and receiving ERC-20 tokens, ensuring a secure and reliable integration with the Ethereum network. It provides a user-friendly API for interacting with smart contracts, making it an excellent choice for decentralized applications.
