@@ -1,3 +1,12 @@
+.cid {
+  text-align: center;
+  font-size: 18px;
+}
+
+.cid em {
+  font-size: 10px;
+}
+
 .containerDisconnected {
   text-align: center;
 }
@@ -72,6 +81,14 @@
 }
 
 @media only screen and (min-width: 999px) {
+  .cid {
+    font-size: 24px;
+  }
+
+  .cid em {
+    font-size: 14px;
+  }
+
   .containerAllProducts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

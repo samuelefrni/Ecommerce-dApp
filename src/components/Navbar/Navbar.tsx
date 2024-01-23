@@ -3,7 +3,7 @@ import NavbarCSS from "./Navbar.module.css";
 
 import Connectors from "../Connectors/Connectors";
 import { Link } from "react-router-dom";
-import Logo from "../../../assets/Ethereum-Logo-PNG-HD-Image.png";
+import Logo from "../../assets/Ethereum-Logo-PNG-HD-Image.png";
 
 const Navbar = (): JSX.Element => {
   return (

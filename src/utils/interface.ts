@@ -22,6 +22,14 @@ export interface SuccesPageI {
 export interface ObjI {
   description: string;
   id: string;
+  name: string;
+  value: string;
+}
+
+export interface ReturDataI {
+  cid: string;
+  description: string;
+  id: string;
   image: string;
   name: string;
   value: string;

@@ -2,7 +2,7 @@ import { createHelia } from "helia";
 import { json } from "@helia/json";
 import { ObjI } from "./interface";
 
-import Data from "../../data.json";
+import Data from "../data.json";
 
 export const runHeliaNode = async () => {
   const helia = await createHelia();
@@ -12,5 +12,5 @@ export const runHeliaNode = async () => {
 
   const obj: ObjI[] = await j.get(cid);
 
-  return obj;
+  return { cid, obj };
 };

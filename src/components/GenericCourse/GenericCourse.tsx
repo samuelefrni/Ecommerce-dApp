@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CourseI, PurchaseI } from "../../utils/interface";
-import AbstractIMAGE from "../../../assets/wp7961688-dark-violet-wallpapers.jpg";
+import AbstractIMAGE from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import GenericCourseCSS from "./GenericCourse.module.css";
 
 import { useAccount } from "wagmi";

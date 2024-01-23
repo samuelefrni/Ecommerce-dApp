@@ -1,6 +1,6 @@
 import React from "react";
 import HomeCSS from "./Home.module.css";
-import Image from "../../../assets/wp7961688-dark-violet-wallpapers.jpg";
+import Image from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import { courses } from "../../utils/data";
 
 import { Link } from "react-router-dom";
@@ -13,6 +13,9 @@ const Home = (): JSX.Element => {
         <title>Gianni's Web3 Shop</title>
         <meta name="description" content={`Gianni's Web3 shop`} />
       </Helmet>
+      <p className={HomeCSS.cid}>
+        Contents Identifiers <br /> <em>{courses[0].cid}</em>
+      </p>
       <div className={HomeCSS.containerAllProducts}>
         {courses.map((course) => (
           <div key={course.name} className={HomeCSS.containerCourse}>
