@@ -60,13 +60,21 @@ To fully experience the features of the dApp and participate in token transactio
 
 ## About my choices
 
-### Technology Stack
-
-In developing this E-Commerce DApp, I made several key choices to ensure a secure, efficient, and user-friendly experience.
-
 ### React and TypeScript
 
 I chose React and TypeScript for the frontend development to leverage the component-based architecture, which facilitates modular development and code reusability. TypeScript adds static typing, enhancing code quality and providing better developer tooling.
+
+### React Helmet
+
+React Helmet is very important to dynamically update page titles based on the content being viewed, this not only enhances the user experience but also contributes to SEO. I also use React Helmet to set meta descriptions for different pages, meta descriptions are crucial for SEO, and dynamically updating them based on the page content can improve search engine rankings.
+
+### React Router Dom
+
+React Router Dom is an important choice for React applications that require advanced navigation and routing management. It facilitates the development of responsive and well-structured SPA applications, giving the developer powerful and intuitive tools for creating high-quality user experiences.
+
+### React Icons
+
+I chose to use React Icons because is designed to be easily integrated with React projects without requiring complex configurations. I easily embed icons into my project without having to manually manage asset loading.
 
 ### Ethereum Transactions with Wagmi
 
@@ -76,13 +84,17 @@ For interacting with the Ethereum blockchain and handling transactions, I opted 
 
 For user authentication and secure wallet transactions, I integrated wallet connectors, including MetaMask and WalletConnect. This choice ensures a seamless and familiar experience for users, allowing them to connect their Ethereum wallets to the dApp easily. MetaMask is widely used and provides a browser extension for easy integration, while WalletConnect enables mobile wallet compatibility for a broader user base.
 
-### Vercel for Hosting
+### IPFS Helia
 
-I selected Vercel for hosting the application due to its simplicity, scalability, and seamless integration with GitHub. Vercel provides automatic deployments, making it easy to showcase the live demo and deploy updates effortlessly.
+IPFS Helia introduces decentralized storage for media assets and other content, significantly reducing dependence on centralized servers.
 
 ### Test Network Support (Sepolia)
 
 To enhance the development and testing process, the application supports a test network. This allows users to experiment with the dApp without using real Ethereum tokens, ensuring a risk-free environment for testing.
+
+### Vercel for Hosting
+
+I selected Vercel for hosting the application due to its simplicity, scalability, and seamless integration with GitHub. Vercel provides automatic deployments, making it easy to showcase the live demo and deploy updates effortlessly.
 
 ### User Interface Design
 
