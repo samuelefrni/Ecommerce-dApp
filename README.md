@@ -8,7 +8,7 @@
     <a href="https://ecommerce-dapp-pink.vercel.app/"><strong>View Demo</strong></a>
     <br />
     <br />
-    <a href="./src/assets">Presentation IT</a>
+    <a href="./src/assets/Progetto TypeScript, React e Web3 di Samuele Furnari.pdf">Presentation IT</a>
   </p>
 </div>
 
@@ -41,6 +41,7 @@ It is essential that:
 9. The application must support a test network
 
 ## Importance of Wallet Provider
+
 To ensure the smooth functioning of the E-Commerce DApp, it's crucial for users to have a compatible wallet provider installed. A wallet provider, such as MetaMask browser extension, plays a pivotal role in connecting users to the Ethereum blockchain and enabling secure transactions. Here's why having a wallet provider is essential:
 
 1. Secure Transactions: Wallet providers, like MetaMask, act as a secure bridge between the user and the Ethereum blockchain. They manage private keys and provide a secure environment for signing transactions, ensuring the safety of users' funds.
@@ -100,7 +101,7 @@ These choices aim to create a seamless and sustainable solution for Gianni's age
 3. Install dependencies using `npm install` (or relevant command).
 4. Run the app with `npm run dev`.
 5. Test the dApp!
-    
+
 ## Contributing
 
 We welcome contributions! Follow these steps:
@@ -120,8 +121,8 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
   - Email: samuelefurnari9@gmail.com
   - GitHub: [samuelefrni](https://github.com/samuelefrni)
   - LinkedIn: [Samuele Furnari](https://www.linkedin.com/in/samuele-furnari-a37567220/)
- 
- ## React + TypeScript + Vite
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
