@@ -54,14 +54,10 @@ const GenericCourse: React.FC<CourseI> = ({
 
           setPurchaseSuccess(true);
         },
-        onError: (data) => {
-          setErrorMessage(data.message);
-        },
       }
     );
   };
 
-  const [errorMessage, setErrorMessage] = useState("");
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
 
   return (

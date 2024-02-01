@@ -8,7 +8,6 @@ const SuccesPage: React.FC<SuccesPageI> = ({
   title,
   image,
   setPurchaseSuccess,
-  purchase,
 }) => {
   return (
     <React.StrictMode>
