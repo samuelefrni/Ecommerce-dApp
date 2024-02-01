@@ -6,9 +6,9 @@ import GenericCourseCSS from "./GenericCourse.module.css";
 import { useAccount } from "wagmi";
 import { addressGianni } from "../../utils/utils";
 import { useSendTransaction } from "wagmi";
-import { purchase } from "../../utils/data";
 import { parseEther } from "viem";
 import { CiWallet } from "react-icons/ci";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import SuccesPage from "../../pages/SuccesPage/SuccesPage";
 
@@ -32,14 +32,27 @@ const GenericCourse: React.FC<CourseI> = ({
         value: parseEther(value),
       },
       {
-        onSuccess: () => {
-          setPurchaseSuccess(true);
+        onSuccess: (txHash) => {
+          const localStoragePurchases = JSON.parse(
+            localStorage.getItem("purchases") || "No Purchases"
+          ) as PurchaseI[];
+
           const newPurchase: PurchaseI = {
             courseName,
             price,
             accountAddress,
+            txHash,
+            chainId: account.chainId,
           };
-          purchase.push({ ...newPurchase });
+
+          localStoragePurchases.push(newPurchase);
+
+          localStorage.setItem(
+            "purchases",
+            JSON.stringify(localStoragePurchases)
+          );
+
+          setPurchaseSuccess(true);
         },
         onError: (data) => {
           setErrorMessage(data.message);
@@ -65,6 +78,12 @@ const GenericCourse: React.FC<CourseI> = ({
         />
       ) : (
         <div className={GenericCourseCSS.mainContainer}>
+          <Link to={"/account"}>
+            <span>⚠️</span> <br />
+            <span>
+              <strong>Check your chain before purchase</strong>
+            </span>
+          </Link>
           <div className={GenericCourseCSS.courseContainer}>
             <img
               className={GenericCourseCSS.abstractIMG}
@@ -83,8 +102,8 @@ const GenericCourse: React.FC<CourseI> = ({
               <div className={GenericCourseCSS.buyCourseContainer}>
                 {error ? (
                   <div className={GenericCourseCSS.errorContainer}>
+                    <p>{description}</p>
                     <strong>{error.name}</strong>
-                    <em>{errorMessage}</em>
                     <button onClick={() => window.location.reload()}>
                       Try Again
                     </button>
@@ -93,7 +112,7 @@ const GenericCourse: React.FC<CourseI> = ({
                   <div>
                     <div className={GenericCourseCSS.infoCourse}>
                       <p>{description}</p>
-                      <span>Price: {value} ETH</span>
+                      <p>Price: {value} ETH</p>
                       <button
                         onClick={() =>
                           handlePurchase(

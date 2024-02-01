@@ -21,7 +21,7 @@ nav img {
   padding: 20px;
 }
 
-@media only screen and (min-width: 999px) {
+@media only screen and (min-width: 1180px) {
   nav img {
     height: 120px;
   }

@@ -11,6 +11,8 @@ export interface PurchaseI {
   courseName: string;
   price: string;
   accountAddress: string;
+  txHash: string;
+  chainId: number | undefined;
 }
 
 export interface SuccesPageI {

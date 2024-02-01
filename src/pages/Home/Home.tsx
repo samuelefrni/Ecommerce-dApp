@@ -13,13 +13,14 @@ const Home = (): JSX.Element => {
         <title>Gianni's Web3 Shop</title>
         <meta name="description" content={`Gianni's Web3 shop`} />
       </Helmet>
-      <p className={HomeCSS.cid}>
-        Contents Identifiers <br /> <em>{courses[0].cid}</em>
-      </p>
       <div className={HomeCSS.containerAllProducts}>
         {courses.map((course) => (
           <div key={course.name} className={HomeCSS.containerCourse}>
-            <img className={HomeCSS.abstractIMG} src={Image} alt="" />
+            <img
+              className={HomeCSS.abstractIMG}
+              src={Image}
+              alt="Abstract Image"
+            />
             <h2>{course.name}</h2>
             <div className={HomeCSS.containerIMG}>
               <img src={course.image} alt={course.name} />

@@ -1,4 +1,4 @@
-import { PurchaseI, ReturDataI } from "./interface";
+import { ReturDataI } from "./interface";
 import { runHeliaNode } from "./helia";
 
 import ImageTactile from "../assets/OL_020p_en_2500x1500_L1240145_be-2048x1229.jpg";
@@ -29,5 +29,3 @@ export const courses = await runHeliaNode().then(({ cid, obj }) => {
     };
   });
 });
-
-export const purchase: PurchaseI[] = [];

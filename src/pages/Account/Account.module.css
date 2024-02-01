@@ -1,3 +1,11 @@
+.accountContainer {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .accountInfo {
   display: flex;
   justify-content: center;
@@ -7,6 +15,7 @@
   border-radius: 20px;
   margin: 20px;
   text-align: center;
+  width: 90%;
 }
 
 .accountInfo ul {
@@ -20,9 +29,14 @@
 
 .containerPurchase {
   display: flex;
+  text-align: center;
 }
 
-@media only screen and (min-width: 999px) {
+.containerPurchase a {
+  color: black;
+}
+
+@media only screen and (min-width: 1180px) {
   .accountContainer {
     display: flex;
     justify-content: center;

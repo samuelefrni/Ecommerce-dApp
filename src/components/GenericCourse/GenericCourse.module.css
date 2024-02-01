@@ -2,6 +2,15 @@
   display: flex;
   justify-content: center;
   margin: 30px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.mainContainer a {
+  color: black;
+  font-size: 18px;
+  margin: 20px;
 }
 
 .courseContainer {
@@ -11,12 +20,12 @@
   background-color: white;
   color: white;
   border-radius: 20px;
-  width: 90%;
   text-align: center;
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
   border: 3px solid rgba(0, 0, 0, 0.6);
+  max-width: 400px;
 }
 
 .abstractIMG {
@@ -34,7 +43,7 @@
 }
 
 .containerConnectWallet svg {
-  font-size: 50px;
+  font-size: 80px;
   margin: 50px;
   z-index: 2;
 }
@@ -82,8 +91,11 @@ p {
   align-items: center;
 }
 
+.infoCourse p {
+  padding: 10px 20px;
+}
+
 .infoCourse span {
-  padding: 10px;
   z-index: 1;
 }
 
@@ -101,27 +113,24 @@ p {
 }
 
 .errorContainer strong {
-  font-size: 16px;
-  padding: 10px;
+  font-size: 18px;
+  padding: 18px;
   z-index: 1;
-}
-
-.errorContainer em {
-  font-size: 10px;
-  z-index: 1;
-  width: 80%;
-  padding: 10px;
 }
 
 .errorContainer button {
-  padding: 10px 20px;
-  margin: 20px;
   max-width: 200px;
+  margin-bottom: 20px;
+  margin: 20px;
 }
 
-@media only screen and (min-width: 999px) {
+@media only screen and (min-width: 1180px) {
+  .mainContainer a {
+    font-size: 24px;
+  }
+
   .courseContainer {
-    width: 50%;
+    max-width: 600px;
   }
 
   .courseContainer h1,
@@ -136,6 +145,7 @@ p {
   .courseContainer p {
     font-size: 18px;
     max-width: 600px;
+    padding: 18px;
   }
 
   .abstractIMG {
@@ -157,19 +167,25 @@ p {
     margin: 50px;
   }
 
+  .containerConnectWallet {
+    min-width: 600px;
+  }
+
   .infoCourse span {
     font-size: 18px;
     padding: 10px;
   }
 
+  .errorContainer {
+    min-width: 600px;
+  }
+
   .errorContainer strong {
     font-size: 22px;
-  }
-  .errorContainer em {
-    font-size: 16px;
   }
 
   .errorContainer button {
     width: 40%;
+    margin: 20px;
   }
 }
