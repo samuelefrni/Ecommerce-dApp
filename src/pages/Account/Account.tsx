@@ -38,7 +38,12 @@ const Account = () => {
                 ChainName: <strong>{account.chain.name}</strong>
               </li>
               <li>
-                Balance: <strong>{balanceETH?.slice(0, 6)} ETH</strong>
+                Balance:{" "}
+                {balanceETH ? (
+                  <strong>{balanceETH?.slice(0, 6)} ETH</strong>
+                ) : (
+                  <strong>0 ETH</strong>
+                )}
               </li>
             </ul>
             <h2>PURCHASES</h2>
