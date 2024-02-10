@@ -114,11 +114,6 @@ p {
   min-width: 300px;
 }
 
-.errorContainer strong {
-  font-size: 18px;
-  padding: 10px;
-  z-index: 1;
-}
 .errorContainer em {
   font-size: 14px;
   z-index: 1;
@@ -137,7 +132,7 @@ p {
   }
 
   .courseContainer {
-    max-width: 600px;
+    min-width: 600px;
   }
 
   .courseContainer h1,
@@ -183,12 +178,12 @@ p {
     padding: 10px;
   }
 
-  .errorContainer {
-    min-width: 600px;
+  .infoCourse p {
+    max-width: 520px;
   }
 
-  .errorContainer strong {
-    font-size: 22px;
+  .errorContainer {
+    min-width: 600px;
   }
 
   .errorContainer em {

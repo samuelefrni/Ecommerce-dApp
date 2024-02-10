@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CourseI, ErrorI, PurchaseI } from "../../utils/interface";
+import { CourseI, PurchaseI } from "../../utils/interface";
 import AbstractIMAGE from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import GenericCourseCSS from "./GenericCourse.module.css";
 
@@ -19,7 +19,7 @@ const GenericCourse: React.FC<CourseI> = ({
   value,
 }) => {
   const account = useAccount();
-  const { sendTransaction } = useSendTransaction();
+  const { sendTransaction, error } = useSendTransaction();
 
   const handlePurchase = (
     courseName: string,
@@ -33,8 +33,6 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
-          setPurchaseSuccess(true);
-
           const localStoragePurchases = JSON.parse(
             localStorage.getItem("purchases") || "No Purchases"
           ) as PurchaseI[];
@@ -53,18 +51,13 @@ const GenericCourse: React.FC<CourseI> = ({
             "purchases",
             JSON.stringify(localStoragePurchases)
           );
-        },
-        onError: (data) => {
-          setErrorTx({
-            errorName: data.name,
-            errorMessage: data.message,
-          });
+
+          setPurchaseSuccess(true);
         },
       }
     );
   };
 
-  const [errorTx, setErrorTx] = useState<ErrorI>();
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
 
   return (
@@ -103,9 +96,8 @@ const GenericCourse: React.FC<CourseI> = ({
               </div>
             ) : (
               <div className={GenericCourseCSS.buyCourseContainer}>
-                {errorTx?.errorName ? (
+                {error ? (
                   <div className={GenericCourseCSS.errorContainer}>
-                    <strong>{errorTx.errorName}</strong>
                     <em>
                       We're sorry, an error occurred while processing your
                       request. Please try again later. If the issue persists,
