@@ -111,6 +111,7 @@ const GenericCourse: React.FC<CourseI> = ({
                       request. Please try again later. If the issue persists,
                       please contact technical support for assistance.
                     </em>
+                    <em>{errorTx.errorMessage}</em>
                     <button onClick={() => window.location.reload()}>
                       Try Again
                     </button>
