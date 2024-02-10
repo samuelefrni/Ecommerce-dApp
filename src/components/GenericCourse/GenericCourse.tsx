@@ -33,10 +33,11 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
-          setPurchaseSuccess(true);
           const localStoragePurchases = JSON.parse(
             localStorage.getItem("purchases") || "No Purchases"
           ) as PurchaseI[];
+
+          setPurchaseSuccess(true);
 
           const newPurchase: PurchaseI = {
             courseName,
@@ -105,9 +106,9 @@ const GenericCourse: React.FC<CourseI> = ({
                       <div className={GenericCourseCSS.errorContainer}>
                         <strong>{error.name}</strong>
                         <em>User rejected the request</em>
-                        <Link to={"/"}>
-                          <button>Try Again</button>
-                        </Link>
+                        <button onClick={() => window.location.reload()}>
+                          Try Again
+                        </button>
                       </div>
                     )}
                     {errorMessage.includes(
@@ -119,9 +120,9 @@ const GenericCourse: React.FC<CourseI> = ({
                           The total cost of executing this transaction exceeds
                           the balance of the account
                         </em>
-                        <Link to={"/"}>
-                          <button>Try Again</button>
-                        </Link>
+                        <button onClick={() => window.location.reload()}>
+                          Try Again
+                        </button>
                       </div>
                     )}
                     {!errorMessage.includes("User rejected the request") &&
@@ -130,9 +131,9 @@ const GenericCourse: React.FC<CourseI> = ({
                       ) && (
                         <div className={GenericCourseCSS.errorContainer}>
                           <strong>Something went wrong</strong>
-                          <Link to={"/"}>
-                            <button>Try Again</button>
-                          </Link>
+                          <button onClick={() => window.location.reload()}>
+                            Try Again
+                          </button>
                         </div>
                       )}
                   </div>

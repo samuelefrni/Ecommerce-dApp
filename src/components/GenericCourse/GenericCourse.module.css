@@ -64,8 +64,7 @@ p {
   font-style: italic;
 }
 
-/* Button */
-.courseContainer a {
+.courseContainer button {
   max-width: 300px;
   z-index: 1;
 }
@@ -159,7 +158,6 @@ p {
     height: 220%;
   }
 
-  /* Button */
   .courseContainer a {
     font-size: 18px;
     width: 40%;
