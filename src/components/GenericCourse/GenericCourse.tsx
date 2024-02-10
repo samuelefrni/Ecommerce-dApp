@@ -33,6 +33,8 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
+          setPurchaseSuccess(true);
+
           const localStoragePurchases = JSON.parse(
             localStorage.getItem("purchases") || "No Purchases"
           ) as PurchaseI[];
@@ -51,8 +53,6 @@ const GenericCourse: React.FC<CourseI> = ({
             "purchases",
             JSON.stringify(localStoragePurchases)
           );
-
-          setPurchaseSuccess(true);
         },
         onError: (data) => {
           setErrorTx({
@@ -111,7 +111,6 @@ const GenericCourse: React.FC<CourseI> = ({
                       request. Please try again later. If the issue persists,
                       please contact technical support for assistance.
                     </em>
-                    <em>{errorTx.errorMessage}</em>
                     <button onClick={() => window.location.reload()}>
                       Try Again
                     </button>
