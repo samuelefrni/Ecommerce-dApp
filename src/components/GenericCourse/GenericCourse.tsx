@@ -55,7 +55,7 @@ const GenericCourse: React.FC<CourseI> = ({
           setPurchaseSuccess(true);
         },
         onError: (data) => {
-          setErroreMessage({
+          setErrorTx({
             errorName: data.name,
             errorMessage: data.message,
           });
@@ -64,7 +64,7 @@ const GenericCourse: React.FC<CourseI> = ({
     );
   };
 
-  const [errorMessage, setErroreMessage] = useState<ErrorI>();
+  const [errorTx, setErrorTx] = useState<ErrorI>();
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
 
   return (
@@ -103,46 +103,17 @@ const GenericCourse: React.FC<CourseI> = ({
               </div>
             ) : (
               <div className={GenericCourseCSS.buyCourseContainer}>
-                {errorMessage ? (
-                  <div>
-                    {errorMessage.errorMessage.includes(
-                      "User rejected the request"
-                    ) && (
-                      <div className={GenericCourseCSS.errorContainer}>
-                        <strong>{errorMessage.errorName}</strong>
-                        <em>User rejected the request</em>
-                        <button onClick={() => window.location.reload()}>
-                          Try Again
-                        </button>
-                      </div>
-                    )}
-                    {errorMessage.errorMessage.includes(
-                      "executing this transaction exceeds the balance"
-                    ) && (
-                      <div className={GenericCourseCSS.errorContainer}>
-                        <strong>{errorMessage.errorName}</strong>
-                        <em>
-                          The total cost of executing this transaction exceeds
-                          the balance of the account
-                        </em>
-                        <button onClick={() => window.location.reload()}>
-                          Try Again
-                        </button>
-                      </div>
-                    )}
-                    {!errorMessage.errorMessage.includes(
-                      "User rejected the request"
-                    ) &&
-                      !errorMessage.errorMessage.includes(
-                        "executing this transaction exceeds the balance"
-                      ) && (
-                        <div className={GenericCourseCSS.errorContainer}>
-                          <strong>Something went wrong</strong>
-                          <button onClick={() => window.location.reload()}>
-                            Try Again
-                          </button>
-                        </div>
-                      )}
+                {errorTx?.errorName ? (
+                  <div className={GenericCourseCSS.errorContainer}>
+                    <strong>{errorTx.errorName}</strong>
+                    <em>
+                      We're sorry, an error occurred while processing your
+                      request. Please try again later. If the issue persists,
+                      please contact technical support for assistance.
+                    </em>
+                    <button onClick={() => window.location.reload()}>
+                      Try Again
+                    </button>
                   </div>
                 ) : (
                   <div>
