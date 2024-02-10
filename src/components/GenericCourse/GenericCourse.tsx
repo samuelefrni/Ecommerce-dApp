@@ -33,6 +33,7 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
+          setPurchaseSuccess(true);
           const localStoragePurchases = JSON.parse(
             localStorage.getItem("purchases") || "No Purchases"
           ) as PurchaseI[];
@@ -51,8 +52,6 @@ const GenericCourse: React.FC<CourseI> = ({
             "purchases",
             JSON.stringify(localStoragePurchases)
           );
-
-          setPurchaseSuccess(true);
         },
         onError: (data) => {
           setErroreMessage(data.message);
@@ -106,9 +105,9 @@ const GenericCourse: React.FC<CourseI> = ({
                       <div className={GenericCourseCSS.errorContainer}>
                         <strong>{error.name}</strong>
                         <em>User rejected the request</em>
-                        <button onClick={() => window.location.reload()}>
-                          Try Again
-                        </button>
+                        <Link to={"/"}>
+                          <button>Try Again</button>
+                        </Link>
                       </div>
                     )}
                     {errorMessage.includes(
@@ -120,9 +119,9 @@ const GenericCourse: React.FC<CourseI> = ({
                           The total cost of executing this transaction exceeds
                           the balance of the account
                         </em>
-                        <button onClick={() => window.location.reload()}>
-                          Try Again
-                        </button>
+                        <Link to={"/"}>
+                          <button>Try Again</button>
+                        </Link>
                       </div>
                     )}
                     {!errorMessage.includes("User rejected the request") &&
@@ -131,9 +130,9 @@ const GenericCourse: React.FC<CourseI> = ({
                       ) && (
                         <div className={GenericCourseCSS.errorContainer}>
                           <strong>Something went wrong</strong>
-                          <button onClick={() => window.location.reload()}>
-                            Try Again
-                          </button>
+                          <Link to={"/"}>
+                            <button>Try Again</button>
+                          </Link>
                         </div>
                       )}
                   </div>
