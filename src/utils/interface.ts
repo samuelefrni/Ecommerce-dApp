@@ -36,3 +36,8 @@ export interface ReturDataI {
   name: string;
   value: string;
 }
+
+export interface ErrorI {
+  errorName: string;
+  errorMessage: string;
+}

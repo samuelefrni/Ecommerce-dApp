@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CourseI, PurchaseI } from "../../utils/interface";
+import { CourseI, ErrorI, PurchaseI } from "../../utils/interface";
 import AbstractIMAGE from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import GenericCourseCSS from "./GenericCourse.module.css";
 
@@ -19,7 +19,7 @@ const GenericCourse: React.FC<CourseI> = ({
   value,
 }) => {
   const account = useAccount();
-  const { sendTransaction, error } = useSendTransaction();
+  const { sendTransaction } = useSendTransaction();
 
   const handlePurchase = (
     courseName: string,
@@ -37,8 +37,6 @@ const GenericCourse: React.FC<CourseI> = ({
             localStorage.getItem("purchases") || "No Purchases"
           ) as PurchaseI[];
 
-          setPurchaseSuccess(true);
-
           const newPurchase: PurchaseI = {
             courseName,
             price,
@@ -53,15 +51,20 @@ const GenericCourse: React.FC<CourseI> = ({
             "purchases",
             JSON.stringify(localStoragePurchases)
           );
+
+          setPurchaseSuccess(true);
         },
         onError: (data) => {
-          setErroreMessage(data.message);
+          setErroreMessage({
+            errorName: data.name,
+            errorMessage: data.message,
+          });
         },
       }
     );
   };
 
-  const [errorMessage, setErroreMessage] = useState("");
+  const [errorMessage, setErroreMessage] = useState<ErrorI>();
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
 
   return (
@@ -100,22 +103,24 @@ const GenericCourse: React.FC<CourseI> = ({
               </div>
             ) : (
               <div className={GenericCourseCSS.buyCourseContainer}>
-                {error ? (
+                {errorMessage ? (
                   <div>
-                    {errorMessage.includes("User rejected the request") && (
+                    {errorMessage.errorMessage.includes(
+                      "User rejected the request"
+                    ) && (
                       <div className={GenericCourseCSS.errorContainer}>
-                        <strong>{error.name}</strong>
+                        <strong>{errorMessage.errorName}</strong>
                         <em>User rejected the request</em>
                         <button onClick={() => window.location.reload()}>
                           Try Again
                         </button>
                       </div>
                     )}
-                    {errorMessage.includes(
+                    {errorMessage.errorMessage.includes(
                       "executing this transaction exceeds the balance"
                     ) && (
                       <div className={GenericCourseCSS.errorContainer}>
-                        <strong>{error.name}</strong>
+                        <strong>{errorMessage.errorName}</strong>
                         <em>
                           The total cost of executing this transaction exceeds
                           the balance of the account
@@ -125,8 +130,10 @@ const GenericCourse: React.FC<CourseI> = ({
                         </button>
                       </div>
                     )}
-                    {!errorMessage.includes("User rejected the request") &&
-                      !errorMessage.includes(
+                    {!errorMessage.errorMessage.includes(
+                      "User rejected the request"
+                    ) &&
+                      !errorMessage.errorMessage.includes(
                         "executing this transaction exceeds the balance"
                       ) && (
                         <div className={GenericCourseCSS.errorContainer}>
