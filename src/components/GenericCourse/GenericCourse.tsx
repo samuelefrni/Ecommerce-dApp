@@ -33,9 +33,9 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
-          const localStoragePurchasesString = localStorage.getItem("purchases");
-          const localStoragePurchases = localStoragePurchasesString
-            ? JSON.parse(localStoragePurchasesString)
+          const localStoragePurchasesJSON = localStorage.getItem("purchase");
+          const localStoragePurchases = localStoragePurchasesJSON
+            ? JSON.parse(localStoragePurchasesJSON)
             : [];
 
           const newPurchase: PurchaseI = {
