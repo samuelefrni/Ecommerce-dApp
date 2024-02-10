@@ -114,15 +114,21 @@ p {
   min-width: 300px;
 }
 
+.errorContainer strong {
+  font-size: 18px;
+  z-index: 1;
+  padding: 10px;
+}
+
 .errorContainer em {
   font-size: 14px;
   z-index: 1;
-  padding: 10px;
   width: 80%;
+  padding: 10px;
 }
 
 .errorContainer button {
-  max-width: 200px;
+  width: 80%;
   margin: 20px;
 }
 
@@ -182,16 +188,23 @@ p {
     max-width: 520px;
   }
 
+  .infoCourse button {
+    width: 60%;
+  }
+
   .errorContainer {
     min-width: 600px;
   }
 
+  .errorContainer strong {
+    font-size: 24px;
+  }
+
   .errorContainer em {
     font-size: 18px;
-    padding: 20px;
   }
 
   .errorContainer button {
-    width: 40%;
+    width: 60%;
   }
 }

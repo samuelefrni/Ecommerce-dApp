@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CourseI, PurchaseI } from "../../utils/interface";
+import { CourseI, ErrorI, PurchaseI } from "../../utils/interface";
 import AbstractIMAGE from "../../assets/wp7961688-dark-violet-wallpapers.jpg";
 import GenericCourseCSS from "./GenericCourse.module.css";
 
@@ -19,7 +19,7 @@ const GenericCourse: React.FC<CourseI> = ({
   value,
 }) => {
   const account = useAccount();
-  const { sendTransaction, error } = useSendTransaction();
+  const { sendTransaction } = useSendTransaction();
 
   const handlePurchase = (
     courseName: string,
@@ -33,9 +33,10 @@ const GenericCourse: React.FC<CourseI> = ({
       },
       {
         onSuccess: (txHash) => {
-          const localStoragePurchases = JSON.parse(
-            localStorage.getItem("purchases") || "No Purchases"
-          ) as PurchaseI[];
+          const localStoragePurchasesString = localStorage.getItem("purchases");
+          const localStoragePurchases = localStoragePurchasesString
+            ? JSON.parse(localStoragePurchasesString)
+            : [];
 
           const newPurchase: PurchaseI = {
             courseName,
@@ -54,10 +55,14 @@ const GenericCourse: React.FC<CourseI> = ({
 
           setPurchaseSuccess(true);
         },
+        onError: (data) => {
+          setErrorTx({ errorName: data.name, errorMessage: data.message });
+        },
       }
     );
   };
 
+  const [errorTx, setErrorTx] = useState<ErrorI>();
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
 
   return (
@@ -96,16 +101,38 @@ const GenericCourse: React.FC<CourseI> = ({
               </div>
             ) : (
               <div className={GenericCourseCSS.buyCourseContainer}>
-                {error ? (
+                {errorTx ? (
                   <div className={GenericCourseCSS.errorContainer}>
-                    <em>
-                      We're sorry, an error occurred while processing your
-                      request. Please try again later. If the issue persists,
-                      please contact technical support for assistance.
-                    </em>
-                    <button onClick={() => window.location.reload()}>
-                      Try Again
-                    </button>
+                    <strong>{errorTx.errorName}</strong>
+                    <div>
+                      {errorTx.errorName == "EstimateGasExecutionError" ||
+                      errorTx.errorName == "TransactionExecutionError" ? (
+                        <div className={GenericCourseCSS.errorContainer}>
+                          <em>
+                            Sorry, an error occurred while processing your
+                            request. The error could be related to the rejection
+                            of the transaction or insufficient balance to
+                            purchase the course
+                          </em>
+                          <button onClick={() => window.location.reload()}>
+                            Try Again
+                          </button>
+                        </div>
+                      ) : (
+                        <div className={GenericCourseCSS.errorContainer}>
+                          <em>
+                            {" "}
+                            We're sorry, an error occurred while processing your
+                            request. Please try again later. If the issue
+                            persists, please contact technical support for
+                            assistance.
+                          </em>
+                          <button onClick={() => window.location.reload()}>
+                            Try Again
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ) : (
                   <div>

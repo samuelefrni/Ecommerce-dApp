@@ -9,7 +9,7 @@ import { PurchaseI } from "../../utils/interface";
 const Account = () => {
   const account = useAccount();
   const localStoragePurchases = JSON.parse(
-    localStorage.getItem("purchases") || "[]"
+    localStorage.getItem("purchases") || ""
   ) as PurchaseI[];
 
   const { data: balance } = useBalance({
