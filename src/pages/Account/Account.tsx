@@ -8,9 +8,10 @@ import { PurchaseI } from "../../utils/interface";
 
 const Account = () => {
   const account = useAccount();
-  const localStoragePurchases = JSON.parse(
-    localStorage.getItem("purchases") || ""
-  ) as PurchaseI[];
+  const localStorageObj = localStorage.getItem("purchase");
+  const localStoragePurchases = localStorageObj
+    ? (JSON.parse(localStorageObj) as PurchaseI[])
+    : null;
 
   const { data: balance } = useBalance({
     address: account.address,
@@ -47,26 +48,27 @@ const Account = () => {
               </li>
             </ul>
             <h2>PURCHASES</h2>
-            {localStoragePurchases?.map(
-              (items) =>
-                account.address == items.accountAddress &&
-                account.chainId == items.chainId && (
-                  <div
-                    key={items.txHash}
-                    className={AccountCSS.containerPurchase}
-                  >
-                    <p>{items.courseName}</p>
-                    <p>{items.price} ETH</p>
-                    <p>
-                      <a
-                        href={`https://${account.chain?.name}.etherscan.io/tx/${items.txHash}`}
-                      >
-                        {items.txHash.slice(0, 6)}...
-                      </a>
-                    </p>
-                  </div>
-                )
-            )}
+            {localStorageObj &&
+              localStoragePurchases?.map(
+                (items) =>
+                  account.address == items.accountAddress &&
+                  account.chainId == items.chainId && (
+                    <div
+                      key={items.txHash}
+                      className={AccountCSS.containerPurchase}
+                    >
+                      <p>{items.courseName}</p>
+                      <p>{items.price} ETH</p>
+                      <p>
+                        <a
+                          href={`https://${account.chain?.name}.etherscan.io/tx/${items.txHash}`}
+                        >
+                          {items.txHash.slice(0, 6)}...
+                        </a>
+                      </p>
+                    </div>
+                  )
+              )}
           </div>
         ) : (
           <div className={AccountCSS.accountInfo}>
