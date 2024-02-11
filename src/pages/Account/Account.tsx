@@ -8,10 +8,10 @@ import { PurchaseI } from "../../utils/interface";
 
 const Account = () => {
   const account = useAccount();
-  const localStorageObj = localStorage.getItem("purchase");
-  const localStoragePurchases = localStorageObj
-    ? (JSON.parse(localStorageObj) as PurchaseI[])
-    : null;
+  const localStoragePurchasesJSON = localStorage.getItem("purchases");
+  const localStoragePurchases = localStoragePurchasesJSON
+    ? (JSON.parse(localStoragePurchasesJSON) as PurchaseI[])
+    : [];
 
   const { data: balance } = useBalance({
     address: account.address,
@@ -48,8 +48,8 @@ const Account = () => {
               </li>
             </ul>
             <h2>PURCHASES</h2>
-            {localStorageObj &&
-              localStoragePurchases?.map(
+            {localStoragePurchases &&
+              localStoragePurchases.map(
                 (items) =>
                   account.address == items.accountAddress &&
                   account.chainId == items.chainId && (
